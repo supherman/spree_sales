@@ -5,24 +5,6 @@ describe Spree::Sale do
     subject.stub sale_price: 10
   end
 
-  describe '#display_sale_amount' do
-  end
-
-  describe '#display_sale_amount' do
-    before do
-      Spree::Config[:currency] = 'USD'
-    end
-
-    it 'is a money representation' do
-      expect(subject.display_sale_amount).to be_a_kind_of Spree::Money
-      expect(subject.display_sale_amount.to_s).to eq '$10.00'
-    end
-
-    it 'is based on the current currency' do
-      expect(subject.display_sale_amount.money.currency.to_s).to eq 'USD'
-    end
-  end
-
   describe '#active?' do
     context 'Sale is active' do
       before do

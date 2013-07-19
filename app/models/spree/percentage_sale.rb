@@ -1,7 +1,6 @@
 module Spree
   class PercentageSale < Sale
-    def sale_price
-      variant.price - (variant.price*(value/100))
-    end
+    has_many :percentage_sales_variants, foreign_key: :sale_id
+    has_many :variants, through: :percentage_sales_variants
   end
 end
