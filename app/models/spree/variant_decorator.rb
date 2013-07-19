@@ -1,5 +1,5 @@
 Spree::Variant.class_eval do
-  has_many :sales
+  has_and_belongs_to_many :sales
   has_many :percentage_sales
   has_many :price_sales
 

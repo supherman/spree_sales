@@ -2,7 +2,7 @@ module Spree
   class Sale < ActiveRecord::Base
     include Spree::Sales::Scopes
 
-    belongs_to :variant
+    has_and_belongs_to_many :variants
 
     attr_accessible :variant, :start_at, :end_at, :value
 

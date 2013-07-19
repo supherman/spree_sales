@@ -4,6 +4,10 @@ module Spree
       def index
         @sales = Sale.all
       end
+
+      def new
+        @sale = Sale.new
+      end
     end
   end
 end
