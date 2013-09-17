@@ -5,7 +5,7 @@
 <%= form_for [:admin, @sale] do |f| %>
   <fieldset>
     <legend align="center"><%= Spree.t(:new_sale) %></legend>
-    <%#= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
     <%= render :partial => 'spree/admin/shared/new_resource_links' %>
   </fieldset>
 <% end %>

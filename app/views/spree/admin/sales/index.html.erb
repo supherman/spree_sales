@@ -13,16 +13,18 @@
 <table class="index" id="listing_sales">
   <colgroup>
     <col style="width: 20%">
+    <col style="width: 10%">
     <col style="width: 20%">
     <col style="width: 20%">
-    <col style="width: 20%">
+    <col style="width: 10%">
     <col style="width: 20%">
   </colgroup>
   <thead>
   <tr data-hook="option_header">
-    <th><%= Spree.t(:sku) %></th>
     <th><%= Spree.t(:sale_type) %></th>
     <th><%= Spree.t(:sale_value) %></th>
+    <th><%= Spree.t(:sale_start_at) %></th>
+    <th><%= Spree.t(:sale_end_at) %></th>
     <th><%= Spree.t(:sale_active) %></th>
     <th class="actions"></th>
   </tr>
@@ -30,9 +32,10 @@
   <tbody>
   <% @sales.each do |sale| %>
     <tr class="spree_sale <%= cycle('odd', 'even')%>" id="<%= spree_dom_id sale %>" data-hook="sale_row">
-      <td><%= sale.variant.sku %></td>
       <td><%= sale.to_s %></td>
       <td><%= sale.value %></td>
+      <td><%= sale.start_at %></td>
+      <td><%= sale.end_at %></td>
       <td><%= sale.active? %></td>
       <td class="actions">
         <%= link_to_edit(sale, :class => 'admin_edit_sale', :no_text => true) %>
