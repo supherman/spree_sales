@@ -6,7 +6,7 @@ describe Spree::Variant do
 
     context 'When the variant has an active sale' do
       before do
-        Spree::Sale.create variants: [subject], start_at: 2.days.ago, end_at: 2.days.from_now
+        Spree::Sale.create variant: subject, start_at: 2.days.ago, end_at: 2.days.from_now
       end
 
       it 'returns true' do
@@ -22,7 +22,7 @@ describe Spree::Variant do
 
     context 'When a percentage sale' do
       before do
-        Spree::PercentageSale.create variants: [subject],
+        Spree::PercentageSale.create variant: subject,
                                      start_at: 2.days.ago,
                                      end_at: 2.days.from_now,
                                      value: 10.0
@@ -35,7 +35,7 @@ describe Spree::Variant do
 
     context 'When a price sale' do
       before do
-        Spree::PriceSale.create variants: [subject],
+        Spree::PriceSale.create variant: subject,
                                      start_at: 2.days.ago,
                                      end_at: 2.days.from_now,
                                      value: 2.0
@@ -48,7 +48,7 @@ describe Spree::Variant do
 
     context 'When a fixed price sale' do
       before do
-        Spree::FixedPriceSale.create variants: [subject],
+        Spree::FixedPriceSale.create variant: subject,
                                      start_at: 2.days.ago,
                                      end_at: 2.days.from_now,
                                      value: 7.0
