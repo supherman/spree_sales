@@ -3,6 +3,8 @@ module Spree
     belongs_to :variant
     belongs_to :sale
 
+    attr_accessible :sale_id
+
     def display_sale_amount
       Spree::Money.new(sale_price || 0, { currency: Spree::Config[:currency] })
     end
